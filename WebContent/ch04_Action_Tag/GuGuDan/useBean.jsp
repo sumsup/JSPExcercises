@@ -9,15 +9,12 @@
 <body>
 
 	<h4>구구단 출력하기</h4>
+	
 	<%
 	
 		int[] resultArray = GuGuDan.process();
 		GuGuDan.testProcess();
 		
-	%>
-	
-	<%
-	
 		for(int i = 0; i < resultArray.length; i++) {
 	
 	%>
