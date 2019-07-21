@@ -12,6 +12,7 @@
 	<%
 	
 		int[] resultArray = GuGuDan.process();
+		GuGuDan.testProcess();
 		
 	%>
 	
@@ -21,7 +22,7 @@
 	
 	%>
 	
-	<p><%= resultArray[i] %></p>
+	<p>5 * <%= i+1 %> = <%= resultArray[i] %></p>
 	
 	<%
 		
