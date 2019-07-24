@@ -10,6 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book Market</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+	.detail {
+		
+		display: block;
+	
+	}
+	
+</style>
 </head>
 <body>
 
@@ -41,12 +49,20 @@
 	%>
 	
 		<div>
-			<h4>[<%= books.get(i).getBookId() %>] <%=books.get(i).getName() %></h4>
-			<p><%= books.get(i).getDescription() %></p>
-			<p><%= books.get(i).getAuthor() %> | <%= books.get(i).getPublisher() %> | <%=books.get(i).getUnitPrice() %></p>
-			<hr>
+		
+			<h4>[<%= books.get(i).getCategory() %>] <%=books.get(i).getName() %></h4>
+			<div>
+				<p class='detail'><%= books.get(i).getDescription() %><p class='detail'><a href="book_detail.jsp?id=<%= books.get(i).getBookId() %>" class='btn btn-secondary' 
+				role='button'>상세정보 &raquo;</a></p></p>
+				<p><%= books.get(i).getAuthor() %> | <%= books.get(i).getPublisher() %> | <%=books.get(i).getUnitPrice() %></p>
+				
+			</div>
+			
 		</div>
 	
+		
+		
+		<hr>
 	<%
 	
 		}
