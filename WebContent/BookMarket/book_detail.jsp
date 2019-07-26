@@ -98,19 +98,26 @@
 		
 %>
 
-	<h3>[<%= book.getCategory() %>] <%= book.getName() %></h3>
-	<p> <%= book.getDescription() %></p>
+	<%@include file="include/header.jsp" %>
+	<div class='container'>
 	
-	<p><b>도서코드 : </b><%= book.getBookId() %><%= bookId %></p>
-	<p><b>출판사 : </b><%= book.getPublisher() %></p>
-	<p><b>저자 : </b><%= book.getAuthor() %></p>
-	<p><b>재고수 : </b><%= book.getUnitInStock() %></p>
-	<p><b>총 페이지 수 : </b><%= book.getTotalPages() %></p>
-	<p><b>출판일 : </b><%= book.getReleaseDate() %></p>
-	<h4><%= book.getUnitPrice() %>원</h4>
+		<h3>[<%= book.getCategory() %>] <%= book.getName() %></h3>
+		<p> <%= book.getDescription() %></p>
+		
+		<p><b>도서코드 : </b><%= book.getBookId() %><%= bookId %></p>
+		<p><b>출판사 : </b><%= book.getPublisher() %></p>
+		<p><b>저자 : </b><%= book.getAuthor() %></p>
+		<p><b>재고수 : </b><%= book.getUnitInStock() %></p>
+		<p><b>총 페이지 수 : </b><%= book.getTotalPages() %></p>
+		<p><b>출판일 : </b><%= book.getReleaseDate() %></p>
+		<h4><%= book.getUnitPrice() %>원</h4>
+		
+		<a href='#' class='btn btn-secondary' role='button'>도서주문 &raquo;</a>
+		<a href='books.jsp' class='btn btn-secondary' role='button'>도서목록 &raquo;</a>
 	
-	<a href='#' class='btn btn-secondary' role='button'>도서주문 &raquo;</a>
-	<a href='books.jsp' class='btn btn-secondary' role='button'>도서목록 &raquo;</a>
+	</div>
+	
+	<%@include file="include/footer.jsp" %>
 	
 </body>
 

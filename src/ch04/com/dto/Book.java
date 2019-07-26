@@ -9,8 +9,8 @@ public class Book {
 	private String description; // 설명.
 	private String publisher; // 출판사.
 	private String category; // 분류.
-	private long unitInStock; // 재고 수.
-	private long totalPages; // 페이지 수.
+	private Integer unitInStock; // 재고 수.
+	private Integer totalPages; // 페이지 수.
 	private String releaseDate; // 출판일(월/년).
 	private String condition; // 신규 도서 or 중고 도서 or E-Book.
 	
@@ -46,10 +46,10 @@ public class Book {
 	public String getCategory() {
 		return category;
 	}
-	public long getUnitInStock() {
+	public Integer getUnitInStock() {
 		return unitInStock;
 	}
-	public long getTotalPages() {
+	public Integer getTotalPages() {
 		return totalPages;
 	}
 	public String getReleaseDate() {
@@ -79,10 +79,10 @@ public class Book {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public void setUnitInStock(long unitInStock) {
+	public void setUnitInStock(Integer unitInStock) {
 		this.unitInStock = unitInStock;
 	}
-	public void setTotalPages(long totalPages) {
+	public void setTotalPages(Integer totalPages) {
 		this.totalPages = totalPages;
 	}
 	public void setReleaseDate(String releaseDate) {

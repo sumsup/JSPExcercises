@@ -6,9 +6,23 @@ import ch04.com.dto.Book;
 
 public class BookRepository {
 
-	private ArrayList<Book> listOfBooks = new ArrayList<Book>(); 
 	// 필드를 생성해 주고.
+	private ArrayList<Book> listOfBooks = new ArrayList<Book>(); 
 	// 기본 자료형은 필드를 선언만 해줘도 주입할 수 있는데 왜 ArrayList는 초기화까지 해줘야 하는가?
+	
+	private static BookRepository instance = new BookRepository();
+	// 싱글턴 패턴.
+	
+	public static BookRepository getInstance() {
+		
+		return instance;
+	}
+	
+	public void addBook(Book book) {
+		
+		listOfBooks.add(book);
+		
+	}
 
 	public BookRepository() {
 		

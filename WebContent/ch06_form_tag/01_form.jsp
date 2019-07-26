@@ -8,7 +8,9 @@
 </head>
 <body>
 	
-	<form action='01_form_process.jsp'>
+	<form action='01_form_process.jsp' method='post'>
+	<!-- 메소드를 명시하지 않으면 post로 전송하게 된다. -->
+	
 		<div>
 			이름 : <input type='text' name='name'>
 		</div>

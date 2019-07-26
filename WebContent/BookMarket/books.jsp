@@ -1,9 +1,9 @@
+<%@page import="ch04.com.dao.BookRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="ch04.com.dto.Book" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="booksRepo" class="ch04.com.dao.BookRepository" scope="request" />
 
 <html>
 <head>
@@ -21,13 +21,8 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="./welcome.jsp">Home</a>
-			</div>
-		</div>
-	</nav>
+	
+	<%@ include file="include/header.jsp" %>
 	
 	<div class="jumbotron">
 		<div class="container">
@@ -41,8 +36,10 @@
 		<div>
 	<%
 		
+	
+		BookRepository booksDao = BookRepository.getInstance();
 		/* import 문에서 import 되는 것은 page import 로 설정해 줘야함. */
-		ArrayList<Book> books = booksRepo.getListOfBooks();
+		ArrayList<Book> books = booksDao.getListOfBooks();
 	
 		for(int i=0; i < books.size(); i++) {
 			
@@ -71,12 +68,7 @@
 		</div>
 	</div>
 	
-	
-	<footer class="container">
-
-		<p>&copy; BookMarket</p>
-
-	</footer>
+	<%@ include file="include/footer.jsp" %>
 	
 </body>
 </html>
