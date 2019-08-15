@@ -35,9 +35,13 @@
 	
 	Integer totalPagesToInteger;
 	if (totalPages.isEmpty()) {
+		
 		totalPagesToInteger = 0;
+		
 	} else {
+		
 		totalPagesToInteger =  Integer.valueOf(totalPages);
+		
 	}
 		
 	// book 객체를 생성해서 setting.

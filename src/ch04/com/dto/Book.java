@@ -15,14 +15,18 @@ public class Book {
 	private String condition; // 신규 도서 or 중고 도서 or E-Book.
 	
 	public Book() {
+		
 		super();
+		
 	}
 		
 	public Book(String bookId, String name, Integer unitPrice) {
+		
 		super();
 		this.bookId = bookId;
 		this.name = name;
 		this.unitPrice = unitPrice;
+		
 	}
 
 	public String getBookId() {
