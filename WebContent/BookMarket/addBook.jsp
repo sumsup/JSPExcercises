@@ -13,12 +13,15 @@
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">도서 등록</h1>
+			<div>
+				<a href="logout.jsp" class="btn btn-secondary">로그아웃</a>
+			</div>
 		</div>
 	</div>
 	
 	<div class='container'>
-
-		<form action='processAddBook.jsp' method='post' class='form-horizontal' name='newBook'>
+		<form action='processAddBook.jsp' method='post' class='form-horizontal' name='newBook'
+			enctype='multipart/form-data'>
 			<div class='form-group row'>
 			<label class='col-sm-2'>도서코드</label>
 				<div class='cols-sm-3'>
@@ -87,11 +90,14 @@
 					<input type='radio' name='condition' value='e-book'>E-Book
 				</div>
 			</div>
+			<div class='form-group row'>
+				<label class='col-sm-2'>이미지</label>
+				<div class='cols-sm-3'>
+					<input type='file' name='image' class='form-control'>
+				</div>
+			</div>
 			<input type='submit' value='등록' class='btn btn-secondary'>
-		
-		
-		</form>	
-	
+		</form>
 	</div>
 	<hr>
 	

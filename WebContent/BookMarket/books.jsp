@@ -9,12 +9,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book Market</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <style>
-	.detail {
-		
-		display: block;
-	
+	/*.detail {*/
+	/*	display: block;*/
+	/*}*/
+	.main-box {
+		display: inline-block;
+	}
+	.img_div {
+		float : left;
+		width : 30%;
+		padding-left : 10px;
+		height : 50%;
+	}
+	.contents_body {
+		float : left;
+		margin-left: 10px;
+		width : 65%;
 	}
 	
 </style>
@@ -33,39 +44,28 @@
 	</div>
 	
 	<div class="container">
-		<div>
 	<%
-		
-	
 		BookRepository booksDao = BookRepository.getInstance();
 		/* import 문에서 import 되는 것은 page import 로 설정해 줘야함. */
 		ArrayList<Book> books = booksDao.getListOfBooks();
 	
 		for(int i=0; i < books.size(); i++) {
-			
 	%>
-	
-		<div>
-		
-			<h4>[<%= books.get(i).getCategory() %>] <%=books.get(i).getName() %></h4>
-			<div>
-				<p class='detail'><%= books.get(i).getDescription() %><p class='detail'><a href="book_detail.jsp?id=<%= books.get(i).getBookId() %>" class='btn btn-secondary' 
-				role='button'>상세정보 &raquo;</a></p></p>
-				<p><%= books.get(i).getAuthor() %> | <%= books.get(i).getPublisher() %> | <%=books.get(i).getUnitPrice() %></p>
-				
+		<div class='main-box'>
+			<div class="img_div">
+				<img src="../resources/book_img/<%= books.get(i).getFilename()%>" style="width: 100%;">
 			</div>
-			
+			<div class="contents_body">
+			<h4>[<%= books.get(i).getCategory() %>] <%=books.get(i).getName() %></h4>
+				<p class='detail'><%= books.get(i).getDescription() %><p class='detail'>
+				<p><%= books.get(i).getAuthor() %> | <%= books.get(i).getPublisher() %> | <%=books.get(i).getUnitPrice() %></p>
+				<a href="book_detail.jsp?id=<%= books.get(i).getBookId() %>" class='btn btn-secondary' role='button'>상세정보 &raquo;</a></p></p>
+			</div>
 		</div>
-	
-		
-		
 		<hr>
 	<%
-	
 		}
-		
 	%>
-		</div>
 	</div>
 	
 	<%@ include file="include/footer.jsp" %>

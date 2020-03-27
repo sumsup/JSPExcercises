@@ -32,7 +32,7 @@
 			out.println("파일 크기 : " + file.length());
 			
 			
-		} 
+		}
 		
 	
 	%>

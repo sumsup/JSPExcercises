@@ -13,6 +13,7 @@ public class Book {
 	private Integer totalPages; // 페이지 수.
 	private String releaseDate; // 출판일(월/년).
 	private String condition; // 신규 도서 or 중고 도서 or E-Book.
+	private String filename; // 이미지 파일명.
 	
 	public Book() {
 		
@@ -62,6 +63,7 @@ public class Book {
 	public String getCondition() {
 		return condition;
 	}
+	public String getFilename() { return filename; }
 	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
@@ -95,7 +97,6 @@ public class Book {
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
-	
-	
+	public void setFilename(String filename) { this.filename = filename; }
 
 }
