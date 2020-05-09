@@ -1,7 +1,8 @@
-<%@page import="ch04.com.dao.BookRepository"%>
-<%@page import="ch04.com.dto.Book"%>
-<%@page import="java.util.ArrayList"%>
+<%@ page import="ch04.com.dao.BookRepository"%>
+<%@ page import="ch04.com.dto.Book"%>
+<%@ page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="exceptionNoBookId.jsp" %>
 <jsp:useBean id="booksRepo" class='ch04.com.dao.BookRepository'></jsp:useBean>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -113,6 +114,7 @@
 
 	if (!isMatchedBooKId) { // 찾은 책 아이디랑 전달받은 책 아이디랑 같지 않으면.
 		System.out.println("\n*** 일치하는 책 id 를 찾지 못했습니다... ***\n");
+		throw new NullPointerException("*** 일치하는 책 id 를 찾지 못했습니다... ***");
 	}
 	
 	// 위에서 테스트 해본 바와 같이 bookId를 이용해서 book 객체를 찾는 방법은
@@ -165,9 +167,10 @@
 			<p><b>총 페이지 수 : </b><%= book.getTotalPages() %></p>
 			<p><b>출판일 : </b><%= book.getReleaseDate() %></p>
 			<h4><%= book.getUnitPrice() %>원</h4>
-
-			<a href='#' class='btn btn-secondary' role='button'>도서주문 &raquo;</a>
-			<a href='books.jsp' class='btn btn-secondary' role='button'>도서목록 &raquo;</a>
+			<form name="addForm" action="./addCart.jsp?id=<%=book.getBookId()%>" method="post">
+				<a href='#' class='btn btn-secondary' role='button' onclick="addCart()">장바구니 담기 &raquo;</a>
+				<a href='books.jsp' class='btn btn-secondary' role='button'>도서목록 &raquo;</a>
+			</form>
 		</div>
 	
 	</div>
@@ -178,5 +181,16 @@
 	<%@include file="include/footer.jsp" %>
 	
 </body>
+<script>
+	function addCart() {
+		var isAddCart = confirm("장바구니에 추가 하시겠습니까?");
+
+		if (isAddCart) { // 장바구니에 추가를 선택.
+			document.addForm.submit();
+		} else {
+			document.addForm.reset();
+		}// 아니오를 선택.
+	}
+</script>
 
 </html>

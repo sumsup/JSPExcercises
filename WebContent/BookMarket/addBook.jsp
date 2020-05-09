@@ -7,9 +7,7 @@
 <title>도서 등록</title>
 </head>
 <body>
-	
 	<%@ include file="include/header.jsp" %>
-	
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">도서 등록</h1>
@@ -100,8 +98,6 @@
 		</form>
 	</div>
 	<hr>
-	
 	<%@ include file="include/footer.jsp" %>
-
 </body>
 </html>

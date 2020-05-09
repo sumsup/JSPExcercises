@@ -14,6 +14,7 @@ public class Book {
 	private String releaseDate; // 출판일(월/년).
 	private String condition; // 신규 도서 or 중고 도서 or E-Book.
 	private String filename; // 이미지 파일명.
+	private int cartQuantity; // 장바구니에 담긴 도서 갯수.
 	
 	public Book() {
 		
@@ -64,6 +65,7 @@ public class Book {
 		return condition;
 	}
 	public String getFilename() { return filename; }
+	public int getCartQuantity() { return cartQuantity; }
 	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
@@ -98,5 +100,6 @@ public class Book {
 		this.condition = condition;
 	}
 	public void setFilename(String filename) { this.filename = filename; }
+	public void setCartQuantity(int cartQuantity) { this.cartQuantity = cartQuantity; }
 
 }

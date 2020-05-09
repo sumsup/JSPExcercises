@@ -6,6 +6,7 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="./books.jsp">Home</a>
 				<a class="navbar-brand" href="./addBook.jsp">도서등록</a>
+				<a class="navbar-brand" href="./cart.jsp">장바구니</a>
 			</div>
 		</div>
 	</nav>
